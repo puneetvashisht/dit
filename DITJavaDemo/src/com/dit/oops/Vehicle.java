@@ -11,5 +11,11 @@ public abstract class Vehicle {
 	}
 
 	public abstract void start();
+	
+	@Override
+	public String toString() {
+		return "Vehicle [speed=" + speed + ", engine=" + engine + "]";
+	}
+	
 
 }

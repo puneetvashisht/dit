@@ -7,6 +7,11 @@ public class TestVehicles {
 		
 		Vehicle car = new Car(300, carEngine);
 		car.start();
+		
+		
+		PlaneEngine planeEngine = new PlaneEngine(99999, "airbus");
+		Plane plane = new Plane(1000, 10000, planeEngine);
+		plane.start();
 
 	}
 
