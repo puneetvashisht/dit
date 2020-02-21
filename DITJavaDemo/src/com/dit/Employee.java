@@ -6,7 +6,7 @@ public class Employee {
 	String name;
 	double salary;
 	
-	Address address;
+	Address addresses[];
 	
 	public Employee(){
 		
@@ -19,14 +19,20 @@ public class Employee {
 		
 	}
 	
-	public Employee(int id, String name, double salary, Address address) {
+	public Employee(int id, String name, double salary, Address[] addresses) {
 		this(id, name , salary);
-		this.address = address;
+		this.addresses = addresses;
 	}
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", address=" + address + "]";
+		
+		String addressStr = "";
+		for(Address address: addresses){
+			addressStr +=address.toString();
+		}
+		
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", addresses=" + addressStr + "]";
 	}
 	
 	
