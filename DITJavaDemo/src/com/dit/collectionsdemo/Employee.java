@@ -1,10 +1,10 @@
 package com.dit.collectionsdemo;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
 	
 	int id;
 	String name;
-	double salary;
+	Double salary;
 	public Employee(int id, String name, double salary) {
 		super();
 		this.id = id;
@@ -41,6 +41,11 @@ public class Employee {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+	@Override
+	public int compareTo(Employee o) {
+		return this.id - (o.id);
+//		this.salary.c
 	}
 	
 	
