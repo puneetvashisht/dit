@@ -72,6 +72,8 @@ public class MapDemo {
 	public static List<Atm> findAllAtmsOfBank(String bankName, String location){
 		List<Atm> foundAtms = new ArrayList<>();
 		
+	
+		
 		Bank bank = bankMap.get(bankName);
 		List<Atm> atms = bank.atms;
 		for(Atm atm: atms){
