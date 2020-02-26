@@ -19,6 +19,40 @@ public class Employee {
 		
 	}
 	
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+	public Address[] getAddresses() {
+		return addresses;
+	}
+
+	public void setAddresses(Address[] addresses) {
+		this.addresses = addresses;
+	}
+
 	public Employee(int id, String name, double salary, Address[] addresses) {
 		this(id, name , salary);
 		this.addresses = addresses;
