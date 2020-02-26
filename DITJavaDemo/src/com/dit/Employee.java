@@ -27,17 +27,19 @@ public class Employee {
 	@Override
 	public String toString() {
 		
-		String addressStr = "";
-		for(Address address: addresses){
-			addressStr +=address.toString();
-		}
+//		String addressStr = "";
+//		for(Address address: addresses){
+//			addressStr +=address.toString();
+//		}
 		
-		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", addresses=" + addressStr + "]";
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", addresses="  + "]";
 	}
 	
 	
 	
-	
+	public void incrementSalary(double newAmount){
+		this.salary+=newAmount;
+	}
 	
 	
 	
