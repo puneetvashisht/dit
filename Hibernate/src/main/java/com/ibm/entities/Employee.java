@@ -1,5 +1,6 @@
 package com.ibm.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,9 +11,27 @@ public class Employee {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	int id;
+	@Column(name="EMP_NAME")
 	String name;
 	Double salary;
 	
+	
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setSalary(Double salary) {
+		this.salary = salary;
+	}
+	public int getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public Double getSalary() {
+		return salary;
+	}
 	public Employee(){
 		
 	}
