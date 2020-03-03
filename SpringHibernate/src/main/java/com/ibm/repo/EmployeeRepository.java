@@ -1,10 +1,10 @@
 package com.ibm.repo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,25 +17,54 @@ public class EmployeeRepository {
 	@PersistenceContext
 	EntityManager em; //Session session
 	
-	List<Employee> employees = new ArrayList<>();
 	
-	{
-		Employee e2 = new Employee(12, "Priya", 44343.34);
-		Employee e3 = new Employee(11, "Sumeet", 24343.34);
-		Employee e4 = new Employee(9, "Rahul", 54343.34);
-		employees.add(e2);employees.add(e3);employees.add(e4);
-	}
-
+@Transactional
 	public List<Employee> fetchAllEmployees() {
+		TypedQuery<Employee> query = em.createQuery("select e from Employee e", Employee.class);
+		List<Employee> employees=  query.getResultList();
+		
+//		for(Employee emp : emps){
+//			System.out.println(emp.getAddresses());
+//		}
+		System.out.println(employees);
+		
 		return employees;
+//		return employees;
 	}
+	
+	
+	public List<Employee> fetchAllEmployeesByName(String name) {
+		TypedQuery<Employee> query = em.createQuery("select e from Employee e where e.name=:fname", Employee.class);
+		query.setParameter("fname", name);
+		return query.getResultList();
+	}
+	
 	@Transactional
 	public void addEmployee(Employee toAdd) throws Exception {
 //		this.employees.add(toAdd);
 		em.persist(toAdd);
-		System.out.println(this.employees);
-		throw new Exception("Any error message");
+//		System.out.println(this.employees);
+//		throw new Exception("Any error message");
 		
 	}
+	public Employee findEmployeeById(int id) {
+		Employee emp =  em.find(Employee.class, id);
+		emp.getAddresses();
+		return emp;
+	}
+	
+	@Transactional
+	public void deleteEmployeeById(int id) {
+		
+		Employee emp = this.findEmployeeById(id);
+		em.remove(emp);
+		
+	}
+	@Transactional
+	public void updateEmployee(Employee updatedEmployee) {
+		Employee emp = this.findEmployeeById(updatedEmployee.getId());
+		emp.setSalary(updatedEmployee.getSalary());
+	}
+	
 
 }

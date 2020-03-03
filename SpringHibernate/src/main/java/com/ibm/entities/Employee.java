@@ -1,10 +1,15 @@
 package com.ibm.entities;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Employee {
@@ -15,6 +20,8 @@ public class Employee {
 	String name;
 	Double salary;
 	
+	@OneToMany(cascade=CascadeType.ALL)
+	List<Address> addresses;
 	
 	
 	public void setName(String name) {
@@ -39,19 +46,35 @@ public class Employee {
 		this.name = name;
 		this.salary = salary;
 	}
+	
+	public Employee(String name, double salary, List<Address> addresses) {
+		this.name = name;
+		this.salary = salary;
+		this.addresses = addresses;
+	}
 	public Employee(int id, String name, double salary) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.salary = salary;
 	}
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
+	
+	
+	
+
+public List<Address> getAddresses() {
+		return addresses;
 	}
-//	@Override
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
+	}
+@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", address=" + addresses + "]";
+	}
+	//	@Override
 //	public boolean equals(Object obj){
-//		Employee emp = (Employee) obj;
+//	Employee emp = (Employee) obj;
 //		return this.id == emp.id;
 //		
 //	}

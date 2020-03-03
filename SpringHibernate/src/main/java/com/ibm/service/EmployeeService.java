@@ -28,4 +28,27 @@ public class EmployeeService {
 		
 	}
 
+	public Employee findEmployeeById(int id) {
+		if(id<=0){
+			
+		}
+		return employeeRepository.findEmployeeById(id);
+		
+	}
+
+	public void deleteEmployeeById(int id) {
+		
+		employeeRepository.deleteEmployeeById(id);
+	}
+
+	public void updateEmployee(Employee updatedEmployee) {
+		employeeRepository.updateEmployee(updatedEmployee);
+		
+	}
+
+	public List<Employee> fetchAllEmployeesByName(String name) {
+		return employeeRepository.fetchAllEmployeesByName(name);
+		
+	}
+
 }
