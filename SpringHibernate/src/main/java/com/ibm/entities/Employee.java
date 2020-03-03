@@ -9,9 +9,11 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 @Entity
+@NamedQuery(name="selectEmployeeByName", query="select e from Employee e where e.name=:fname")
 public class Employee {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

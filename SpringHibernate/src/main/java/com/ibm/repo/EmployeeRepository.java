@@ -34,7 +34,8 @@ public class EmployeeRepository {
 	
 	
 	public List<Employee> fetchAllEmployeesByName(String name) {
-		TypedQuery<Employee> query = em.createQuery("select e from Employee e where e.name=:fname", Employee.class);
+//		TypedQuery<Employee> query = em.createQuery("select e from Employee e where e.name=:fname", Employee.class);
+		TypedQuery<Employee> query = em.createNamedQuery("selectEmployeeByName", Employee.class);
 		query.setParameter("fname", name);
 		return query.getResultList();
 	}
