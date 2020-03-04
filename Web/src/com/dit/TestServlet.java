@@ -14,11 +14,16 @@ import javax.servlet.http.HttpServletResponse;
 public class TestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
+   
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String name = request.getParameter("name");
+		System.out.println(name);
+		
+		// Fire Spring code to findEmployeeByName(name)
+		
 		response.setContentType("text/html");
-		response.getWriter().append("<h2>The date today is : </h2>" + new Date() );
+		response.getWriter().append("<h2>User name : </h2>" + name + " on date: " + new Date()  );
 	}
 
 	/**
