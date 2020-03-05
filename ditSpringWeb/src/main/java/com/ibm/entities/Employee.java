@@ -22,8 +22,8 @@ public class Employee {
 	String name;
 	Double salary;
 	
-	@OneToMany(cascade=CascadeType.ALL)
-	List<Address> addresses;
+//	@OneToMany(cascade=CascadeType.ALL)
+//	List<Address> addresses;
 	
 	
 	public void setName(String name) {
@@ -52,7 +52,7 @@ public class Employee {
 	public Employee(String name, double salary, List<Address> addresses) {
 		this.name = name;
 		this.salary = salary;
-		this.addresses = addresses;
+//		this.addresses = addresses;
 	}
 	public Employee(int id, String name, double salary) {
 		super();
@@ -64,15 +64,15 @@ public class Employee {
 	
 	
 
-public List<Address> getAddresses() {
-		return addresses;
-	}
-	public void setAddresses(List<Address> addresses) {
-		this.addresses = addresses;
-	}
+//public List<Address> getAddresses() {
+//		return addresses;
+//	}
+//	public void setAddresses(List<Address> addresses) {
+//		this.addresses = addresses;
+//	}
 @Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", address=" + addresses + "]";
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", address="  + "]";
 	}
 	//	@Override
 //	public boolean equals(Object obj){

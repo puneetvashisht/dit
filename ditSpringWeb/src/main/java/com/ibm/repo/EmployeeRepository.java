@@ -37,7 +37,13 @@ public class EmployeeRepository {
 //		TypedQuery<Employee> query = em.createQuery("select e from Employee e where e.name=:fname", Employee.class);
 		TypedQuery<Employee> query = em.createNamedQuery("selectEmployeeByName", Employee.class);
 		query.setParameter("fname", name);
-		return query.getResultList();
+		List<Employee> employees =  query.getResultList();
+		System.out.println(employees);
+		
+//		for(Employee e : employees){
+//			System.out.println(e.getAddresses());
+//		}
+		return employees;
 	}
 	
 	@Transactional
@@ -50,7 +56,7 @@ public class EmployeeRepository {
 	}
 	public Employee findEmployeeById(int id) {
 		Employee emp =  em.find(Employee.class, id);
-		emp.getAddresses();
+//		emp.getAddresses();
 		return emp;
 	}
 	
