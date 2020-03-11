@@ -31,13 +31,13 @@ public class EmployeeService {
 		
 	}
 
-//	public Employee findEmployeeById(int id) {
-//		if(id<=0){
-//			
-//		}
-//		return employeeRepository.findBy
-//		
-//	}
+	public Employee findEmployeeById(int id) {
+		if(id<=0){
+			
+		}
+		return employeeRepository.getOne(id);
+		
+	}
 
 	public void deleteEmployeeById(int id) {
 		
