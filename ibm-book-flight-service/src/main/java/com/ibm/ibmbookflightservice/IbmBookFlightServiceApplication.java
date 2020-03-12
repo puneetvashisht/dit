@@ -1,12 +1,13 @@
-package com.ibm.ibmsearchflightservice;
+package com.ibm.ibmbookflightservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class IbmSearchFlightServiceApplication {
+public class IbmBookFlightServiceApplication {
+
 	public static void main(String[] args) {
-		SpringApplication.run(IbmSearchFlightServiceApplication.class, args);
+		SpringApplication.run(IbmBookFlightServiceApplication.class, args);
 	}
 
 }

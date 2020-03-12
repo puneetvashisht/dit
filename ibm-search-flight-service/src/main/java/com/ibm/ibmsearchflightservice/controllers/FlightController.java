@@ -1,5 +1,7 @@
 package com.ibm.ibmsearchflightservice.controllers;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +35,27 @@ public class FlightController {
 	@RequestMapping(path="/flight/{src}/to/{dest}", method=RequestMethod.GET)
 	public ResponseEntity<List<Flight>> findFlight(@PathVariable("src") String source, @PathVariable("dest") String destination){
 		ResponseEntity<List<Flight>> re = null;
-		System.out.println(source + destination);
+//		System.out.println(source + destination);
 		List<Flight> flights = flightRepo.findBySourceAndDestination(source, destination);
 		re = new ResponseEntity<>(flights, HttpStatus.OK);
+		return re;
+	}
+	
+	@RequestMapping(path="/flight/lowest/{src}/to/{dest}", method=RequestMethod.GET)
+	public ResponseEntity<Flight> findLowestPriceFlight(@PathVariable("src") String source, @PathVariable("dest") String destination){
+		ResponseEntity<Flight> re = null;
+//		System.out.println(source + destination);
+		List<Flight> flights = flightRepo.findBySourceAndDestination(source, destination);
+		Collections.sort(flights, new Comparator<Flight>(){
+
+			@Override
+			public int compare(Flight o1, Flight o2) {
+				return (int)(o1.getPrice() - o2.getPrice());
+			}
+	
+		});
+		
+		re = new ResponseEntity<>(flights.get(0), HttpStatus.OK);
 		return re;
 	}
 
