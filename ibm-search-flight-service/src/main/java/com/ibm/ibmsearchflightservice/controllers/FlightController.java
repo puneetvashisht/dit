@@ -4,7 +4,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,9 +22,14 @@ import com.ibm.ibmsearchflightservice.repos.FlightRepo;
 @RestController
 @RequestMapping("/api")
 public class FlightController {
+	 Logger logger = LoggerFactory.getLogger(FlightController.class);
 	
 	@Autowired
 	FlightRepo flightRepo;
+	
+	@Autowired
+	Environment environment;
+
 	
 	@RequestMapping(path="/flight", method=RequestMethod.POST)
 	public ResponseEntity<Void> addFlight(@RequestBody Flight flight){
@@ -35,7 +43,8 @@ public class FlightController {
 	@RequestMapping(path="/flight/{src}/to/{dest}", method=RequestMethod.GET)
 	public ResponseEntity<List<Flight>> findFlight(@PathVariable("src") String source, @PathVariable("dest") String destination){
 		ResponseEntity<List<Flight>> re = null;
-//		System.out.println(source + destination);
+		String port = environment.getProperty("local.server.port");
+		logger.info("*********** At port : " + source + destination+ " ----- " + port);
 		List<Flight> flights = flightRepo.findBySourceAndDestination(source, destination);
 		re = new ResponseEntity<>(flights, HttpStatus.OK);
 		return re;
