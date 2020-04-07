@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Calc</title>
+    
+</head>
+<body>
+   <input id="op1" type="number"/>
+   <input id="op2" type="number"/>
+   <div class="result"></div>
+    <button onclick="add()"> + </button>
+    <button onclick="sub()"> - </button>
+    <button onclick="mul()"> x </button>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>    
+    <script>
+
+        function add(){
+            console.log('Add function called')
+            var result = parseInt( $('#op1').val()) + parseInt( $('#op2').val())
+            $('.result').html(result); 
+        }
+        function sub(){
+            $('.result').html($('#op1').val() -  $('#op2').val())
+        }
+        function mul(){
+            $('.result').html($('#op1').val() *  $('#op2').val())
+        }
+
+    </script>
+</body>
+</html>

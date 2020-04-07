@@ -7,6 +7,7 @@
    <input id="op2" type="number"/>
    <div id="result"></div>
     <button onclick="add()"> + </button>
+    <button onclick="sub()"> - </button>
 
     <script>
 
@@ -15,6 +16,13 @@
             var op1 = document.getElementById('op1').value
             var op2 = document.getElementById('op2').value
             var result = parseInt(op1) + parseInt(op2)
+            document.getElementById('result').innerText = result
+        }
+        function sub(){
+            console.log('Add function called')
+            var op1 = document.getElementById('op1').value
+            var op2 = document.getElementById('op2').value
+            var result = op1 - op2
             document.getElementById('result').innerText = result
         }
 

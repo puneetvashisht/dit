@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Weather Info</title>
+    <style>
+        h2 {
+            border: 1px solid black;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- //Synchronous Http Call
+    <form action="dummyUrl" method="get">   
+        <button type="submit">Load Weather Info</button>
+
+    </form> -->
+   
+<h2>Current Tempreture: <span id="currentTemp"></span></h2>
+    <button type="button" onclick="loadWeatherInfo()">Load Weather Info</button>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+    <script>
+        function loadWeatherInfo(){
+            // Asynch Http Call
+            console.log('Asynch Http Call');
+            $.ajax({url: "http://localhost:8000/api/weather", success: function(response){
+                console.log(response);
+                $('#currentTemp').html(response.currentTemp);
+            }});
+        }
+    </script>
+</body>
+</html>
