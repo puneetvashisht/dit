@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+    <h2 id="message">JavaScript</h2>
+   
+    <button onclick="reverse()">Reverse</button>
+
+    <script>
+        console.log('JavaScript here')
+        function reverse(){
+            console.log('Reverse function called')
+            var str = document.getElementById('message').innerText;
+            var revStr = str.split('').reverse().join('')
+            console.log(revStr)
+            document.getElementById('message').innerText = revStr
+        }
+
+    </script>
+</body>
+</html>
