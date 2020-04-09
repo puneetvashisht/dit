@@ -11,7 +11,6 @@ export class CourseService {
   constructor(public http:HttpClient) { }
 
   fetchAllCourses(){
-    console.log('fetch in service')
     return this.http.get(baseUrl).toPromise()
   }
 
