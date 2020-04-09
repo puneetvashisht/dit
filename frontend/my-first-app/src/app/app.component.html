@@ -11,8 +11,16 @@
 <div class="container">
   <div class="row">
   
+    <!-- <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Todo text: </span>
+      </div>
+      <input type="text" #todo (keyup)="0" class="form-control" placeholder="Enter a todo here" aria-label="Username" aria-describedby="basic-addon1">
+      {{todo.value}}
+      <button (click)="addTodo(todo.value)">Add a Todo Item</button>
+    </div> -->
    
-      <app-card *ngFor="let course of courses" caption="{{course.name}}" summary="{{course.salary}}" id="{{course.id}}"></app-card>
+      <app-card *ngFor="let course of courses" caption="{{course.title}}" summary="{{course.summary}}" id="{{course.id}}"></app-card>
       
       
     
