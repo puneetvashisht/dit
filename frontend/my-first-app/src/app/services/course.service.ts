@@ -12,18 +12,18 @@ export class CourseService {
 
   fetchAllCourses(){
     
-    return new Promise((resolve, reject)=> {
-      var str = localStorage.getItem('courses')
-      if(str){
-        var courses = JSON.parse(str)
-      }
-      else{
-        courses = [];
-      }
+    // return new Promise((resolve, reject)=> {
+    //   var str = localStorage.getItem('courses')
+    //   if(str){
+    //     var courses = JSON.parse(str)
+    //   }
+    //   else{
+    //     courses = [];
+    //   }
      
-      resolve(courses);
-    })
-    // return this.http.get(baseUrl).toPromise()
+    //   resolve(courses);
+    // })
+    return this.http.get(baseUrl).toPromise()
   }
 
   deleteCourse(id: number){

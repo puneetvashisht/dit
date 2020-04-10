@@ -12,6 +12,8 @@ export class CardComponent implements OnInit {
   @Input('caption') title: string = ""
   @Input('summary') summary: string = ""
   @Input('id') id: number = null;
+
+  now : Date = new Date();
   constructor(public courseService: CourseService) { }
 
   ngOnInit(): void {
