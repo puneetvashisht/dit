@@ -10,10 +10,17 @@ import { Todo } from 'src/app/models/Todo';
 export class TodoComponent implements OnInit {
 
   todos : Array<Todo> = []
+  test : Array<string> = ['a', 'b', 'c']
+
+  testFn(stringTodos : Array<string>){
+
+  }
+
 
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
+    
     this.todos =  this.todoService.fetchTodos();
     // this.todos = this.todoService.todos
   }
@@ -29,5 +36,8 @@ export class TodoComponent implements OnInit {
     // this.todoService.todos.splice(index, 1);
     this.todos = this.todoService.todos
   }
+
+
+
 
 }
