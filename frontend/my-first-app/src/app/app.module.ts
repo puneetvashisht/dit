@@ -9,10 +9,12 @@ import { CardComponent } from './components/card/card.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { FirstComponent } from './components/first/first.component';
 import { SecondComponent } from './components/second/second.component';
+import { CountryComponent } from './components/country/country.component';
+import { CityComponent } from './components/city/city.component';
 
 @NgModule({
   declarations: [
-    AppComponent, DateComponent, BadgeComponent, CardComponent, SearchPipe, FirstComponent, SecondComponent
+    AppComponent, DateComponent, BadgeComponent, CardComponent, SearchPipe, FirstComponent, SecondComponent, CountryComponent, CityComponent
   ],
   imports: [
     BrowserModule, HttpClientModule
