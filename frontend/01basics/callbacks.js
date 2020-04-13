@@ -19,8 +19,9 @@ function synch(){
 // console.log(result)
 // console.log('finished...')
 
-
+// Puneet
 function asynch(callback){
+    console.log(callback)
     setTimeout(()=>{
         console.log('do some sync functinality');
         sleep(5000)
@@ -29,13 +30,32 @@ function asynch(callback){
     }, 0)   
 }
 
-console.log('starting...')
+
+// console.log('starting...')
 
 function callback(result){
     console.log(result)
 }
 
 // var result = asynch((result)=> console.log(result));
-var result = asynch(callback);
-console.log(result)
+// DIT team
+// var result = asynch(callback);
+// console.log(result)
+// console.log('finished...')
+
+
+function asynch_promises(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            console.log('do some sync functinality');
+            sleep(5000)
+            // resolve("success")
+            reject("id was not supplied")
+        }, 0)
+    })     
+}
+console.log('starting...')
+asynch_promises()
+.then((result)=> console.log(result))
+.catch((error)=> console.log(error))
 console.log('finished...')

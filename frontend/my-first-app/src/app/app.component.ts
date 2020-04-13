@@ -22,6 +22,7 @@ export class AppComponent implements OnInit{
     .then((res: any) => {
       console.log(res);
       this.courses = res;
+      
     })
   }
 
