@@ -23,7 +23,7 @@ export class CourseService {
      
     //   resolve(courses);
     // })
-    return this.http.get(baseUrl).toPromise()
+    return this.http.get(baseUrl);
   }
 
   deleteCourse(id: number){
