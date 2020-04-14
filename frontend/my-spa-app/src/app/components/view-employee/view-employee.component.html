@@ -1,2 +1,10 @@
 <h2>View Employees</h2>
-<p *ngFor="let employee of employees"> {{employee.name}} - {{employee.salary}}</p>
+
+<div *ngIf="showMessage" class="alert alert-success" role="alert">
+    Employee has been deleted successfully!!
+</div>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let employee of employees"> <p>{{employee.name}} - {{employee.salary}} <button class="btn btn-danger" (click)="deleteEmployee(employee.id)"> X </button></p></li>
+   
+  </ul>
+

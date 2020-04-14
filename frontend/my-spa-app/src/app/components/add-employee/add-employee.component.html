@@ -1,1 +1,22 @@
-<p>add-employee works!</p>
+<h2>Add Employee</h2>
+
+<div *ngIf="showMessage" class="alert alert-success" role="alert">
+    Employee has been added successfully!!
+</div>
+
+
+<div class="input-group flex-nowrap">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="addon-wrapping">Employee Name</span>
+    </div>
+    <input type="text" #name class="form-control" placeholder="Enter name" aria-label="name" aria-describedby="addon-wrapping">
+   
+</div>
+
+<div class="input-group flex-nowrap">
+<div class="input-group-prepend">
+    <span class="input-group-text" id="addon-wrapping">Employee Salary</span>
+  </div>
+  <input type="number" #salary class="form-control" placeholder="Enter salary" aria-label="name" aria-describedby="addon-wrapping">
+</div>
+<button type="button" class="btn btn-primary" (click)="addEmployee(name.value, salary.value)">Add Employee</button>

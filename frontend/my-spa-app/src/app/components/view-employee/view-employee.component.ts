@@ -7,7 +7,7 @@ import { EmployeeService } from 'src/app/services/employee.service';
   styleUrls: ['./view-employee.component.css']
 })
 export class ViewEmployeeComponent implements OnInit {
-
+  showMessage : boolean = false;
   employees: Array<any> = []
 
   constructor(private employeeService : EmployeeService) { }
@@ -17,6 +17,17 @@ export class ViewEmployeeComponent implements OnInit {
     .subscribe((res:any)=> {
       console.log(res);
       this.employees = res;
+    })
+  }
+
+  deleteEmployee(id: number){
+    this.employeeService.deleteEmployee(id)
+    .subscribe((res:any)=> {
+      console.log(res);
+     if(res.status == 200){
+       this.showMessage = true;
+       this.employees = this.employees.filter((employee)=> employee.id!=id)
+     }
     })
   }
 
