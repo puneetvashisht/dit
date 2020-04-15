@@ -4,7 +4,7 @@
     Employee has been deleted successfully!!
 </div>
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let employee of employees"> <p>{{employee.name}} - {{employee.salary}} <button class="btn btn-danger" (click)="deleteEmployee(employee.id)"> X </button></p></li>
+    <li class="list-group-item" *ngFor="let employee of employees"> <p>{{employee.id}} : {{employee.name}} - {{employee.salary}} <button class="btn btn-danger" (click)="deleteEmployee(employee.id)"> X </button><button class="btn btn-warning" (click)="editEmployee(employee)"> Edit </button></p></li>
    
   </ul>
 
