@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ibm.ditspringbootproject.entities.Employee;
 import com.ibm.ditspringbootproject.repos.EmployeeRepository;
@@ -35,7 +36,7 @@ public class EmployeeService {
 		if(id<=0){
 			
 		}
-		return employeeRepository.getOne(id);
+		return employeeRepository.findById(id);
 		
 	}
 
@@ -45,8 +46,13 @@ public class EmployeeService {
 		
 	}
 
+	@Transactional
 	public void updateEmployee(Employee updatedEmployee) {
 //		employeeRepository.updateEmployee(updatedEmployee);
+//		employeeRepository.fin
+		Employee employee = employeeRepository.findById(updatedEmployee.getId());
+		employee.setName(updatedEmployee.getName());
+		employee.setSalary(updatedEmployee.getSalary());
 		
 	}
 

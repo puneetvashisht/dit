@@ -4,19 +4,20 @@
     Employee has been added successfully!!
 </div>
 
-
+<div [formGroup]="myForm"> 
 <div class="input-group flex-nowrap">
     <div class="input-group-prepend">
       <span class="input-group-text" id="addon-wrapping">Employee Name</span>
     </div>
-    <input type="text" #name class="form-control" placeholder="Enter name" aria-label="name" aria-describedby="addon-wrapping">
-   
+    <input type="text" formControlName = "name" class="form-control" placeholder="Enter name" aria-label="name" aria-describedby="addon-wrapping">
+    <span *ngIf="myForm.controls['name'].invalid && (myForm.controls['name'].dirty || myForm.controls['name'].touched)" class="alert alert-danger">Name is missing</span>
 </div>
 
 <div class="input-group flex-nowrap">
 <div class="input-group-prepend">
     <span class="input-group-text" id="addon-wrapping">Employee Salary</span>
   </div>
-  <input type="number" #salary class="form-control" placeholder="Enter salary" aria-label="name" aria-describedby="addon-wrapping">
+  <input type="number" formControlName = "salary" class="form-control" placeholder="Enter salary" aria-label="name" aria-describedby="addon-wrapping">
 </div>
-<button type="button" class="btn btn-primary" (click)="addEmployee(name.value, salary.value)">Add Employee</button>
+<button type="button" class="btn btn-primary" (click)="addEmployee()">Add Employee</button>
+</div>
