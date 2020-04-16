@@ -8,3 +8,8 @@
    
   </ul>
 
+  <hr/>
+  <input type="text" #logMessage placeholder="Enter log message"/>
+  <button (click)="log(logMessage.value)">Log Message</button>
+  <hr/>
+  <p *ngFor="let message of logService.logs">{{message}}</p>

@@ -24,3 +24,9 @@
 <button *ngIf="!editMode" type="button" class="btn btn-primary" [disabled]="myForm.invalid" (click)="addEmployee()">Add Employee</button>
 <button *ngIf="editMode" type="button" class="btn btn-primary" [disabled]="myForm.invalid" (click)="updateEmployee()">Update Employee</button>
 </div>
+
+<hr/>
+<input type="text" #logMessage placeholder="Enter log message"/>
+<button (click)="log(logMessage.value)">Log Message</button>
+<hr/>
+<p *ngFor="let message of logService.logs">{{message}}</p>
