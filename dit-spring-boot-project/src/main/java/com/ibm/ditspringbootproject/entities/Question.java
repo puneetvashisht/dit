@@ -1,4 +1,6 @@
 package com.ibm.ditspringbootproject.entities;
+
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -8,57 +10,47 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-
 @Entity
 public class Question {
-
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	int id;
 	String text;
 	@OneToMany(cascade=CascadeType.ALL)
-//	@JoinColumn(name="question_id_fk",referencedColumnName="id")
-	List<Option> options;
-
-	public Question(int id, String text, List<Option> options) {
+	List<Choice> choices;
+	public Question(int id, String text, List<Choice> choices) {
 		super();
 		this.id = id;
 		this.text = text;
-		this.options = options;
+		this.choices = choices;
 	}
-	
 	public Question() {
 		super();
 	}
-
-	public String getQuestion() {
-		return text;
-	}
-
-	public void setQuestion(String text) {
-		this.text = text;
-	}
-
-	
-	public List<Option> getOptions() {
-		return options;
-	}
-
-	public void setOptions(List<Option> options) {
-		this.options = options;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public int getId() {
 		return id;
 	}
-
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String gettext() {
+		return text;
+	}
+	public void settext(String text) {
+		this.text = text;
+	}
+	public List<Choice> getChoices() {
+		return choices;
+	}
+	public void setChoices(List<Choice> choices) {
+		this.choices = choices;
+	}
 	@Override
 	public String toString() {
-		return "Quiz [id=" + id + ", question=" + text + ", options=" + options + "]";
+		return "Question [id=" + id + ", text=" + text + ", choices=" + choices + "]";
 	}
+
+	
 	
 }
