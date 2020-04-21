@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ibm.ditspringbootproject.entities.Question;
 import com.ibm.ditspringbootproject.entities.Quiz;
@@ -26,9 +27,10 @@ public class QuizService {
 		
 	}
 
+	@Transactional
 	public List<Question> findAllQuestion() {
 		List<Question> questions =  questionRepository.findAll();
-		System.out.println(questions);
+//		System.out.println(questions);
 		return questions;
 	}
 	
@@ -39,7 +41,7 @@ public class QuizService {
 
 	public List<Quiz> findAllQuiz() {
 		List<Quiz> quizzes =  quizRepository.findAll();
-		System.out.println(quizzes);
+//		System.out.println(quizzes);
 		return quizzes;
 	}
 

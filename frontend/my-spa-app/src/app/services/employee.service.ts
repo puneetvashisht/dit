@@ -8,6 +8,8 @@ const baseUrl = 'http://localhost:8000/api/employee/'
 })
 export class EmployeeService {
 
+  sharedData: any = null;
+
   constructor(private http: HttpClient) { }
 
   fetchAllEmployees(){

@@ -4,6 +4,8 @@ import { Employee } from 'src/app/models/employee';
 import { Router } from '@angular/router';
 import { LogService } from 'src/app/services/log.service';
 
+import {map, filter} from 'rxjs/operators'
+
 @Component({
   selector: 'app-view-employee',
   templateUrl: './view-employee.component.html',
@@ -17,6 +19,13 @@ export class ViewEmployeeComponent implements OnInit {
 
   ngOnInit(): void {
     this.employeeService.fetchAllEmployees()
+    // .pipe(filter((res:Array<Employee>)=> ), map((res:Array<Employee>) => 'Count: ' + res))
+    .pipe(map((obj:Array<Employee>) =>{console.log('In map', obj);
+      return obj.filter( emp => emp.name !== '' )
+      // console.log(filteredList)
+      // return filteredList
+      })
+    )
     .subscribe((res:Array<Employee>)=> {
       console.log(res);
       this.employees = res;
@@ -41,6 +50,54 @@ export class ViewEmployeeComponent implements OnInit {
 
   log(message: string){
     this.logService.add(message)
+    this.employeeService.sharedData = {
+      "name": "java",
+    "question": [
+              {
+              "name": "q1",
+              "option": [
+                  {
+                      "name": "Exception",
+                      "is_answer": "false"
+                  },
+                  {
+                      "name": "Code-behind",
+                      "is_answer": "true"
+                  },
+                  {
+                      "name": "Code-front",
+                      "is_answer": "false"
+                  },
+                  {
+                      "name": "None of the above",
+                      "is_answer": "false"
+                  }
+                  ]
+              },
+              {
+              "name": "q2",
+              "option": [
+                  {
+                      "name": "Exception",
+                      "is_answer": "false"
+                  },
+                  {
+                      "name": "Code-behind",
+                      "is_answer": "true"
+                  },
+                  {
+                      "name": "Code-front",
+                      "is_answer": "false"
+                  },
+                  {
+                      "name": "None of the above",
+                      "is_answer": "false"
+                  }
+                  ]
+              }
+              ]
+  }
+
   }
 
 }

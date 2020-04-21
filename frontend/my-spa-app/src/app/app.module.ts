@@ -7,11 +7,15 @@ import { AppComponent } from './app.component';
 
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { ViewEmployeeComponent } from './components/view-employee/view-employee.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { ObserveComponent } from './components/observe/observe.component';
 //1. Define Routes
 const appRoutes: Routes = [
   { path: 'add', component:  AddEmployeeComponent},
   { path: 'view',      component: ViewEmployeeComponent },
+  { path: 'observe', component: ObserveComponent}
   
 ];
 
@@ -20,7 +24,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     AddEmployeeComponent,
-    ViewEmployeeComponent
+    ViewEmployeeComponent,
+    ObserveComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,10 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
