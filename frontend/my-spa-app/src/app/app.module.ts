@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ObserveComponent } from './components/observe/observe.component';
+import { HighlightDirective } from './directives/highlight.directive';
 //1. Define Routes
 const appRoutes: Routes = [
   { path: 'add', component:  AddEmployeeComponent},
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
     AppComponent,
     AddEmployeeComponent,
     ViewEmployeeComponent,
-    ObserveComponent
+    ObserveComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

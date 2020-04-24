@@ -50,6 +50,7 @@ export class ViewEmployeeComponent implements OnInit {
 
   log(message: string){
     this.logService.add(message)
+    this.showMessage = !this.showMessage
     this.employeeService.sharedData = {
       "name": "java",
     "question": [

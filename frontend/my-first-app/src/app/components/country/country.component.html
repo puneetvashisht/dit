@@ -3,4 +3,5 @@
 <input type="text" #countryname (blur)="0" placeholder="Enter your country"/>
 <hr/>
 
-<app-city [country]="countryname.value" (cityChanged)="handleCityChanged($event)"></app-city>
+<app-city [country]="countryname.value"  (cityChanged)="handleCityChanged($event)"></app-city>
+
