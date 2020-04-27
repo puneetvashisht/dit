@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Clock</title>
+</head>
+<body>
+    <h2>Our Clock</h2>
+    <div id="clock">
+
+    </div>
+    <script>
+
+setInterval(()=>{
+    var today = new Date();
+    var hours = today.getHours();
+    var minutes = today.getMinutes();
+    var seconds = today.getSeconds();
+    document.getElementById('clock').innerHTML = hours + " : " + minutes + " : " + seconds
+},1000)
+        
+        
+    </script>
+</body>
+</html>
