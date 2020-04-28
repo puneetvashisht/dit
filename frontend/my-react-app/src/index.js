@@ -5,6 +5,8 @@ import './index.css';
 import Badge from './Badge'
 import Clock from './Clock'
 import Dropdown from './Dropdown'
+import Lifecycle from './Lifecycle'
+import Employee from './Employee'
 import * as serviceWorker from './serviceWorker';
 
 
@@ -31,6 +33,9 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <Badge></Badge> */}
     <Dropdown caption="Select Courses"/>
+     <Lifecycle></Lifecycle>
+     <hr/>
+     <Employee></Employee>
   </React.StrictMode>,
   document.getElementById('root')
 );
