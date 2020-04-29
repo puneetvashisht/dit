@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DropdownItem from './DropdownItem'
 
 class Dropdown extends Component {
     // state = {  }
@@ -27,7 +28,8 @@ class Dropdown extends Component {
 
         let courseList = this.state.courses.map((course, i)=> {
             console.log(course, i)
-            return <a className="dropdown-item" onClick={this.handleItemClick.bind(this, course)} key={i} href="#">{course}</a>
+            return <DropdownItem text={course} whenItemClick={this.handleItemClick.bind(this)}></DropdownItem>
+            // return <a className="dropdown-item" onClick={this.handleItemClick.bind(this, course)} key={i} href="#">{course}</a>
         })
         console.log(courseList)
 
