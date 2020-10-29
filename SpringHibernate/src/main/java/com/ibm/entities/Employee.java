@@ -9,11 +9,17 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
-@Entity
-@NamedQuery(name="selectEmployeeByName", query="select e from Employee e where e.name=:fname")
+//@Entity
+
+@NamedQueries({
+	@NamedQuery(name="selectEmployeeByName", query="select e from Employee e where e.name=:fname"),
+	@NamedQuery(name="selectEmployeeSalarySum", query="select sum(e.salary) from Employee e")
+})
+
 public class Employee {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

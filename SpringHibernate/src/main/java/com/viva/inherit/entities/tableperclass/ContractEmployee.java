@@ -5,11 +5,11 @@ import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-//@Entity
-@AttributeOverrides({
-	@AttributeOverride(name="id", column=@Column(name="id")),
-	@AttributeOverride(name="name", column=@Column(name="name"))
-})
+@Entity
+//@AttributeOverrides({
+//	@AttributeOverride(name="id", column=@Column(name="id")),
+//	@AttributeOverride(name="name", column=@Column(name="name"))
+//})
 public class ContractEmployee extends Employee{
 	
 	double payPerHour;

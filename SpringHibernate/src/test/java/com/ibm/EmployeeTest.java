@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.ibm.entities.Address;
 import com.ibm.entities.Employee;
 import com.ibm.service.EmployeeService;
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:beans.xml")
@@ -30,7 +30,13 @@ public class EmployeeTest {
 //		assertSame("should return three employees", 3, emps.size());
 	}
 	
-	@Test
+//	@Test
+	public void testfetchSalariesOfEmployees(){
+		double totalSalary = employeeService.fetchTotalSalariesOfEmployees();
+		System.out.println(totalSalary);
+	}
+	
+//	@Test
 	public void testfetchAllEmployeesByName() {
 		List<Employee> emps = employeeService.fetchAllEmployeesByName("NewEmployeeToDb");
 		System.out.println(emps);
@@ -45,7 +51,7 @@ public class EmployeeTest {
 		
 //		Employee toAdd = new Employee("NewEmployeeToDb", 34333.34, addresses);
 		
-		Employee toAdd = new Employee("NewEmployeeToDb", 34333.34);
+		Employee toAdd = new Employee("Another", 34333.34);
 		employeeService.addEmployee(toAdd);
 		
 	}
@@ -71,4 +77,19 @@ public class EmployeeTest {
 //		System.out.println(emp);
 		
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

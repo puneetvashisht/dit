@@ -9,10 +9,12 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ibm.entities.Employee;
+import com.viva.inherit.entities.tableperclass.Employee;
+
+
 
 @Repository
-public class EmployeeRepository {
+public class EmployeeInheritanceRepository {
 	
 	@PersistenceContext
 	EntityManager em; //Session session
@@ -73,7 +75,7 @@ public class EmployeeRepository {
 	@Transactional
 	public void updateEmployee(Employee updatedEmployee) {
 		Employee emp = this.findEmployeeById(updatedEmployee.getId());
-		emp.setSalary(updatedEmployee.getSalary());
+//		emp.setSalary(updatedEmployee.getSalary());
 	}
 	
 

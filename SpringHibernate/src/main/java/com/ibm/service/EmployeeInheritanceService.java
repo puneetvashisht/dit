@@ -5,14 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ibm.entities.Employee;
-import com.ibm.repo.EmployeeRepository;
+import com.ibm.repo.EmployeeInheritanceRepository;
+//import com.ibm.repo.EmployeeRepository;
+import com.viva.inherit.entities.tableperclass.Employee;
 
 @Service
-public class EmployeeService {
+public class EmployeeInheritanceService {
 	
 	@Autowired
-	EmployeeRepository employeeRepository;
+	EmployeeInheritanceRepository employeeRepository;
 	
 	public List<Employee> fetchAllEmployees(){
 		return employeeRepository.fetchAllEmployees();
