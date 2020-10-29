@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
-@Entity
+//@Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public class Employee {
 	

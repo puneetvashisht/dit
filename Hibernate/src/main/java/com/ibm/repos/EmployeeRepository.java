@@ -35,6 +35,10 @@ public class EmployeeRepository {
 		Transaction tx  = session.beginTransaction();
 //		2. // fire save/persist method on session object
 		session.save(employee);
+//		session2.save(employee)
+		
+		// insert into Employee (id, EMP_NAME, salary) values (123, employee.name, employee.salary)
+		
 		tx.commit();
 		
 		session.close();

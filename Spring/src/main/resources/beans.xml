@@ -15,10 +15,10 @@
 
 	<context:component-scan base-package="com.ibm"></context:component-scan>
 	
-	<bean id="b" class="com.ibm.B"></bean>
+	<!-- <bean id="b" class="com.ibm.B"></bean>
 	<bean id="a" class="com.ibm.A">
 		<constructor-arg  name="b" ref="b"></constructor-arg>
-	</bean>
+	</bean> -->
 	
 	<!-- <bean id="paymentRepository" class="com.ibm.PaymentRepository"></bean>
 	<bean id="paymentService" class="com.ibm.PaymentService">

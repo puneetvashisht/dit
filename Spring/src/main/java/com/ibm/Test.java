@@ -17,8 +17,8 @@ public class Test {
 		A a = context.getBean(A.class);
 		a.execute();
 		
-		PaymentService ps = (PaymentService)context.getBean("paymentService");
-		ps.payment();
+//		PaymentService ps = (PaymentService)context.getBean("paymentService");
+//		ps.payment();
 		
 		
 

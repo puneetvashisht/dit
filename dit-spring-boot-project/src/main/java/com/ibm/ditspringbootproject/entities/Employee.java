@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
+import com.ibm.ditspringbootproject.controllers.Address;
+
 @Entity
 @NamedQuery(name="selectEmployeeByName", query="select e from Employee e where e.name=:fname")
 public class Employee implements Serializable {
@@ -27,10 +29,16 @@ public class Employee implements Serializable {
 	String name;
 	Double salary;
 	
-//	@OneToMany(cascade=CascadeType.ALL)
-//	List<Address> addresses;
+	@OneToMany(cascade=CascadeType.ALL)
+	List<Address> addresses;
 	
 	
+	public List<Address> getAddresses() {
+		return addresses;
+	}
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
+	}
 	public void setName(String name) {
 		this.name = name;
 	}

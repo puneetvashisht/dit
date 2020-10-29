@@ -2,7 +2,7 @@ package com.viva.inherit.entities;
 
 import javax.persistence.Entity;
 
-@Entity
+//@Entity
 public class ContractEmployee extends Employee{
 	
 	double payPerHour;

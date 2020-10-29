@@ -1,12 +1,17 @@
 package com.ibm.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="EMP_TABLE")
+
 public class Employee {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -14,8 +19,9 @@ public class Employee {
 	@Column(name="EMP_NAME")
 	String name;
 	Double salary;
-	
-	
+	//Composition  -- has-a relationship
+//	@OneToMany(cascade=CascadeType.ALL)
+//	List<Address> addresses;
 	
 	public void setName(String name) {
 		this.name = name;

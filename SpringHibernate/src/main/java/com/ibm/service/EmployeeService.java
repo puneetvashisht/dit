@@ -16,6 +16,7 @@ public class EmployeeService {
 	
 	public List<Employee> fetchAllEmployees(){
 		return employeeRepository.fetchAllEmployees();
+//		employeeRepository.find
 	}
 
 	public void addEmployee(Employee toAdd) {

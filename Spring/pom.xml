@@ -16,6 +16,9 @@
 	    <artifactId>spring-context</artifactId>
 	    <version>5.0.5.RELEASE</version>
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+
+
 	
 	<dependency>
 	    <groupId>org.springframework</groupId>

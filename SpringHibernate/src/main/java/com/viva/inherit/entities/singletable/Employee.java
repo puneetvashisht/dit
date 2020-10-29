@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
-@Entity
+//@Entity
 @DiscriminatorColumn(name="EMP_TYPE")
 @DiscriminatorValue("0")
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)

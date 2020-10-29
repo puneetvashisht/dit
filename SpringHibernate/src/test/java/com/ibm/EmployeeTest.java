@@ -21,7 +21,7 @@ public class EmployeeTest {
 	EmployeeService employeeService;
 	
 	
-	@Test
+//	@Test
 	public void testfetchAllEmployeess() {
 		List<Employee> emps = employeeService.fetchAllEmployees();
 		System.out.println(emps);
@@ -30,7 +30,7 @@ public class EmployeeTest {
 //		assertSame("should return three employees", 3, emps.size());
 	}
 	
-//	@Test
+	@Test
 	public void testfetchAllEmployeesByName() {
 		List<Employee> emps = employeeService.fetchAllEmployeesByName("NewEmployeeToDb");
 		System.out.println(emps);
@@ -38,13 +38,14 @@ public class EmployeeTest {
 	}
 //	@Test
 	public void testaddEmployees() {
-		Address address = new Address(34, "Malasi", "Dehradun");
-		Address residentialAddress = new Address(34, "Jangpura", "New DElhi");
-		List<Address> addresses = new ArrayList<>();
-		addresses.add(address); addresses.add(residentialAddress); 
+//		Address address = new Address(34, "Malasi", "Dehradun");
+//		Address residentialAddress = new Address(34, "Jangpura", "New DElhi");
+//		List<Address> addresses = new ArrayList<>();
+//		addresses.add(address); addresses.add(residentialAddress); 
 		
-		Employee toAdd = new Employee("NewEmployeeToDb", 34333.34, addresses);
+//		Employee toAdd = new Employee("NewEmployeeToDb", 34333.34, addresses);
 		
+		Employee toAdd = new Employee("NewEmployeeToDb", 34333.34);
 		employeeService.addEmployee(toAdd);
 		
 	}

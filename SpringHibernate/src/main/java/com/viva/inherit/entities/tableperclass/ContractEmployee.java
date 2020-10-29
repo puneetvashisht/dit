@@ -5,7 +5,7 @@ import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-@Entity
+//@Entity
 @AttributeOverrides({
 	@AttributeOverride(name="id", column=@Column(name="id")),
 	@AttributeOverride(name="name", column=@Column(name="name"))

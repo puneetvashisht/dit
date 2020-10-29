@@ -22,8 +22,8 @@ public class Employee {
 	String name;
 	Double salary;
 	
-//	@OneToMany(cascade=CascadeType.ALL)
-//	List<Address> addresses;
+	@OneToMany(cascade=CascadeType.ALL)
+	List<Address> addresses;
 	
 	
 	public void setName(String name) {

@@ -3,7 +3,7 @@ package com.viva.inherit.entities.singletable;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
-@Entity
+//@Entity
 @DiscriminatorValue("2")
 public class RegularEmployee extends Employee{
 	

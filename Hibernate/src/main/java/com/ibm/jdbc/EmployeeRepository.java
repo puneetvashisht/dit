@@ -22,11 +22,18 @@ public class EmployeeRepository {
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from Employee");
 			
+			
+			
+			
 			List<Employee> employees = new ArrayList<>();
 //			4. Fetch result using result set
 			while (rs.next()){
 //				System.out.println(rs.getInt(1) + "  " + rs.getString(3) + "  " + rs.getDouble(4));
 				Employee emp = new Employee(rs.getInt(1), rs.getString(3), rs.getDouble(4) );
+				//another query to fetch addresses for this employee
+				// set address into employees
+				// loop
+				
 				employees.add(emp);
 			}
 				

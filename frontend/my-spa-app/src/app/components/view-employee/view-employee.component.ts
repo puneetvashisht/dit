@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { LogService } from 'src/app/services/log.service';
 
 import {map, filter} from 'rxjs/operators'
+import { HttpClient } from '@angular/common/http';
+import { TestService } from 'src/app/services/test.service';
 
 @Component({
   selector: 'app-view-employee',
@@ -15,9 +17,14 @@ export class ViewEmployeeComponent implements OnInit {
   showMessage : boolean = false;
   employees: Array<Employee> = []
 
-  constructor(private employeeService : EmployeeService, private router: Router,public logService: LogService) { }
+  constructor(private employeeService : EmployeeService, private router: Router,public logService: LogService, private testService: TestService) { }
+
 
   ngOnInit(): void {
+  }
+  loadData(): void {
+    // this.httpClient.get('http://localhost:8000/')
+    // this.testService.fetchSomeData()
     this.employeeService.fetchAllEmployees()
     // .pipe(filter((res:Array<Employee>)=> ), map((res:Array<Employee>) => 'Count: ' + res))
     .pipe(map((obj:Array<Employee>) =>{console.log('In map', obj);

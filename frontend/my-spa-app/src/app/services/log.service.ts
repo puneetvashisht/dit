@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class LogService {
 
-  public logs : Array<string> = ['my first log']
+  public logs : Array<string> = ['my first log', 'my second log']
 
   add(message: string){
     this.logs.push(message)

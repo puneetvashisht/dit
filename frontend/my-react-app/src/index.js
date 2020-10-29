@@ -15,30 +15,30 @@ import * as serviceWorker from './serviceWorker';
 // ReactDOM.render(element, document.getElementById('message'))
 
 
-// setInterval(()=>{
-//   var today = new Date();
-//   var hours = today.getHours();
-//   var minutes = today.getMinutes();
-//   var seconds = today.getSeconds();
-//   ReactDOM.render(
-//     <React.StrictMode>
-//       <Badge></Badge>
-//       <Clock title="My React Clock!!" hours={hours} minutes={minutes} seconds={seconds}></Clock>
-//     </React.StrictMode>,
-//     document.getElementById('root')
-//   );
-// }, 1000)
+setInterval(()=>{
+  var today = new Date();
+  var hours = today.getHours();
+  var minutes = today.getMinutes();
+  var seconds = today.getSeconds();
+  ReactDOM.render(
+    <React.StrictMode>
+      {/* <Badge></Badge> */}
+      <Clock title="My React Clock!!" hours={hours} minutes={minutes} seconds={seconds}></Clock>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+}, 1000)
 
-ReactDOM.render(
-  <React.StrictMode>
-    {/* <Badge></Badge> */}
-    <Dropdown caption="Select Courses"/>
-     <Lifecycle></Lifecycle>
-     <hr/>
-     <Employee></Employee>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// ReactDOM.render(
+//   <React.StrictMode>
+//     {/* <Badge></Badge> */}
+//     <Dropdown caption="Select Courses"/>
+//      <Lifecycle></Lifecycle>
+//      <hr/>
+//      <Employee></Employee>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
 
 
 

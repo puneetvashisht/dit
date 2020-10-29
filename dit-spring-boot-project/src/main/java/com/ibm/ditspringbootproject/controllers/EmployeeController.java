@@ -23,14 +23,14 @@ import com.ibm.ditspringbootproject.services.EmployeeService;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping(path="/api")
+@RequestMapping(path="/api/employees")
 public class EmployeeController {
 	
 	@Autowired
 	EmployeeService employeeService;
 	
 	
-	@RequestMapping(path="/employee/{id}" , method=RequestMethod.DELETE)
+	@RequestMapping(path="/{id}" , method=RequestMethod.DELETE)
 	public ResponseEntity<Void> deleteEmployee(@PathVariable("id") int id){
 		ResponseEntity<Void> re= null;
 		try{
@@ -45,7 +45,7 @@ public class EmployeeController {
 		
 	}
 	
-	@PostMapping("/employee")
+	@PostMapping("/")
 	public ResponseEntity<Void> addEmployee(@RequestBody Employee employee){
 		
 		employeeService.addEmployee(employee);
@@ -53,7 +53,7 @@ public class EmployeeController {
 		return re;
 	}
 	
-	@PutMapping("/employee")
+	@PutMapping("/")
 	public ResponseEntity<Void> updateEmployee(@RequestBody Employee employee){
 		
 		employeeService.updateEmployee(employee);
@@ -61,14 +61,14 @@ public class EmployeeController {
 		return re;
 	}
 	
-	@GetMapping("/employee")
+	@GetMapping("/")
 	public List<Employee> findEmployee(){
 
 		List<Employee> employees = employeeService.fetchAllEmployees();
 		return employees;
 	}
 	
-	@GetMapping("/employee/{id}")
+	@GetMapping("/{id}")
 	public Employee findEmployeeById(@PathVariable("id") int id){
 
 		Employee employee = employeeService.findEmployeeById(id);

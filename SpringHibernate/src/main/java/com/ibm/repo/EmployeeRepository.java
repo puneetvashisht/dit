@@ -20,6 +20,8 @@ public class EmployeeRepository {
 	
 @Transactional
 	public List<Employee> fetchAllEmployees() {
+	
+	// select * from EMP_TABLE --> JPQL -- work with entities/field not table/column 
 		TypedQuery<Employee> query = em.createQuery("select e from Employee e", Employee.class);
 		List<Employee> employees=  query.getResultList();
 		
@@ -50,7 +52,7 @@ public class EmployeeRepository {
 	}
 	public Employee findEmployeeById(int id) {
 		Employee emp =  em.find(Employee.class, id);
-		emp.getAddresses();
+//		emp.getAddresses();
 		return emp;
 	}
 	

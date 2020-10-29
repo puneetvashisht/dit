@@ -13,4 +13,8 @@ describe('LogService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('logs array should contain 1 entry', () => {
+    expect(service.logs.length).toBe(2);
+  });
 });

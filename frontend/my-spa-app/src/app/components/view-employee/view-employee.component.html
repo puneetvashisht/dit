@@ -3,6 +3,7 @@
 <div *ngIf="showMessage" class="alert alert-success" role="alert">
     Employee has been deleted successfully!!
 </div>
+<button (click)="loadData()">Load Data</button>
 <ul class="list-group">
     <li class="list-group-item" *ngFor="let employee of employees"> <p>{{employee.id}} : {{employee.name}} - {{employee.salary}} <button class="btn btn-danger" (click)="deleteEmployee(employee.id)"> X </button><button class="btn btn-warning" (click)="editEmployee(employee)"> Edit </button></p></li>
    

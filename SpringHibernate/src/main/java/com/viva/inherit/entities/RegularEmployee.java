@@ -3,7 +3,7 @@ package com.viva.inherit.entities;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
-@Entity
+//@Entity
 public class RegularEmployee extends Employee{
 	
 	double salary;

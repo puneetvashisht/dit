@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
 // const MongoClient = require('mongodb').MongoClient;
 
@@ -9,21 +9,21 @@ const app = express()
 const port = 3000
 
 // Connection URL
-const url = 'mongodb://localhost:27017/test';
+// const url = 'mongodb://localhost:27017/test';
 // Database Name
 
 
-mongoose.connect(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+// mongoose.connect(url, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
 
-const UserSchema = new mongoose.Schema({
-    name: { type: String, default: '' },
-    salary: { type: Number, min: 10000, index: true },
-    date: { type: Date, default: Date.now }
-  });
-const UserModel = mongoose.model('UserModel', UserSchema);
+// const UserSchema = new mongoose.Schema({
+//     name: { type: String, default: '' },
+//     salary: { type: Number, min: 10000, index: true },
+//     date: { type: Date, default: Date.now }
+//   });
+// const UserModel = mongoose.model('UserModel', UserSchema);
 
 
 
@@ -44,14 +44,15 @@ app.get('/users', (req, res)=>{
 
 app.post('/users', (req, res)=>{
     let user = req.body;
-    // users.push(user);
-    const obj = new UserModel();
-    obj.name = user.name;
-    obj.salary = user.salary;
+    users.push(user);
+    res.status(201).end();
+    // const obj = new UserModel();
+    // obj.name = user.name;
+    // obj.salary = user.salary;
 
-    obj.save((error, result)=> {
-        res.status(201).end();
-    })
+    // obj.save((error, result)=> {
+    //     res.status(201).end();
+    // })
 
   //
 });

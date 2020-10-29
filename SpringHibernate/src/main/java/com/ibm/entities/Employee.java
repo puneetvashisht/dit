@@ -22,8 +22,8 @@ public class Employee {
 	String name;
 	Double salary;
 	
-	@OneToMany(cascade=CascadeType.ALL)
-	List<Address> addresses;
+//	@OneToMany(cascade=CascadeType.ALL)
+//	List<Address> addresses;
 	
 	
 	public void setName(String name) {
@@ -49,11 +49,11 @@ public class Employee {
 		this.salary = salary;
 	}
 	
-	public Employee(String name, double salary, List<Address> addresses) {
-		this.name = name;
-		this.salary = salary;
-		this.addresses = addresses;
-	}
+//	public Employee(String name, double salary, List<Address> addresses) {
+//		this.name = name;
+//		this.salary = salary;
+//		this.addresses = addresses;
+//	}
 	public Employee(int id, String name, double salary) {
 		super();
 		this.id = id;
@@ -64,15 +64,15 @@ public class Employee {
 	
 	
 
-public List<Address> getAddresses() {
-		return addresses;
-	}
-	public void setAddresses(List<Address> addresses) {
-		this.addresses = addresses;
-	}
+//public List<Address> getAddresses() {
+//		return addresses;
+//	}
+//	public void setAddresses(List<Address> addresses) {
+//		this.addresses = addresses;
+//	}
 @Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", address=" + addresses + "]";
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", address="  + "]";
 	}
 	//	@Override
 //	public boolean equals(Object obj){
@@ -81,26 +81,26 @@ public List<Address> getAddresses() {
 //		
 //	}
 //	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + id;
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Employee other = (Employee) obj;
-		if (id != other.id)
-			return false;
-		return true;
-	}
+//	@Override
+//	public int hashCode() {
+//		final int prime = 31;
+//		int result = 1;
+//		result = prime * result + id;
+//		return result;
+//	}
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		Employee other = (Employee) obj;
+//		if (id != other.id)
+//			return false;
+//		return true;
+//	}
 
 	
 	
